@@ -1,4 +1,9 @@
 class Book < ApplicationRecord
+  # Many->many
+  has_many :users, through: :user_books
+  has_many :user_books
+
+
   # Validate that the book has a title
   validates :title, presence: true
   
